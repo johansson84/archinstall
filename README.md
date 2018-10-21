@@ -100,13 +100,17 @@ Installation flow of Arch linux and I3 window manager
 		* Edit /etc/mkinitcpio.conf
 			* Add 'ext4' to MODULES
 			* Add 'encrypt' and 'lvm2' to HOOKS before 'filesystems'
-		* mkinitcpio -p linux
+		
+				mkinitcpio -p linux
 	* Setup Grub
-		* pacman -S grub
-		* grub-install --target=i386-pc --recheck /dev/sda
+	
+			pacman -S grub
+			grub-install --target=i386-pc --recheck /dev/sda
 		* In /etc/default/grub edit the line GRUB_CMDLINE_LINUX
-			* GRUB_CMDLINE_LINUX="cryptdevice=/dev/sda2:luks:allow-discards"
-		* grub-mkconfig -o /boot/grub/grub.cfg
+		
+				GRUB_CMDLINE_LINUX="cryptdevice=/dev/sda2:luks:allow-discards"
+	
+			grub-mkconfig -o /boot/grub/grub.cfg
 	* Exit new system and unmount
 		* exit
 		* umount -R /mnt
