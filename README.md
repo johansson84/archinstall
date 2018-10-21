@@ -1,5 +1,5 @@
-# Installing Arch
-Installation flow of Arch linux and I3 window manager 
+# Arch/i3
+Installing Arch linux and i3 window manager 
 ### Set the keyboard layout
 
 	loadkeys sv-latin1
