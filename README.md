@@ -74,24 +74,30 @@ Installation flow of Arch linux and I3 window manager
 	
 			LANG=en_US.UTF-8
 			LC_TIME=sv_SE.UTF-8
-		* export LANG=en_US.UTF-8
+			export LANG=en_US.UTF-8
 	* Set keymap
-		* echo KEYMAP=sv-latin1 > /etc/vconsole.conf
+	
+			echo KEYMAP=sv-latin1 > /etc/vconsole.conf
 	* Set the hardware clock mode
-		* hwclock --systohc
+	
+			hwclock --systohc
 	* Set hostname
-		* ehco hostname > /etc/hostname
+	
+			ehco hostname > /etc/hostname
 		* Add it to /etc/hosts
-			* 127.0.1.1	myhostname.localdomain	myhostname
+		
+				127.0.1.1	myhostname.localdomain	myhostname
 	* Root password
-		* passwd
+	
+			passwd
 	* Create user
-		* useradd -m -g users -G wheel myusername
-		* passwd myusername
+	
+			useradd -m -g users -G wheel myusername
+			passwd myusername
 		* visudo
 			* uncomment %wheel ALL=(ALL) ALL
 	* Configure mkinitcpio with modules needed for the initrd image
-		* vim /etc/mkinitcpio.conf
+		* Edit /etc/mkinitcpio.conf
 			* Add 'ext4' to MODULES
 			* Add 'encrypt' and 'lvm2' to HOOKS before 'filesystems'
 		* mkinitcpio -p linux
