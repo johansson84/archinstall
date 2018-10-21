@@ -100,8 +100,10 @@ Installation flow of Arch linux and I3 window manager
 		* Edit /etc/mkinitcpio.conf
 			* Add 'ext4' to MODULES
 			* Add 'encrypt' and 'lvm2' to HOOKS before 'filesystems'
-		
-				mkinitcpio -p linux
+	
+			```
+			  mkinitcpio -p linux
+			```
 	* Setup Grub
 	
 			pacman -S grub
@@ -110,12 +112,16 @@ Installation flow of Arch linux and I3 window manager
 		
 				GRUB_CMDLINE_LINUX="cryptdevice=/dev/sda2:luks:allow-discards"
 	
-			grub-mkconfig -o /boot/grub/grub.cfg
+		```
+		grub-mkconfig -o /boot/grub/grub.cfg
+		```
 	* Exit new system and unmount
-		* exit
-		* umount -R /mnt
+	
+			exit
+			umount -R /mnt
 	* Reboot
-		* reboot
+	
+			reboot
 * Start network
 	* systemctl enable dhcpcd.service
 	* systemctl start dhcpcd.service
