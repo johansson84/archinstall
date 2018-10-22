@@ -54,7 +54,7 @@ Installing Arch linux and i3 window manager
 	mount /dev/sda1 /mnt/boot
 ## Install
 
-	pacstrap /mnt base base-devel zsh openssh git gwaterfall networkmanager nm-connection-editor network-manager-applet pulseaudio mlocate vim xdg-user-dirs xterm reflector arandr htop llpp feh beaver pcmanfm catfish vlc pepper-flash flameshot
+	pacstrap /mnt base base-devel zsh midori nitrogen dunst openssh git gwaterfall networkmanager nm-connection-editor network-manager-applet pulseaudio mlocate vim xdg-user-dirs xterm reflector arandr htop llpp feh beaver pcmanfm catfish vlc pepper-flash flameshot
 ## Configure
 #### Generate fstab file
 	
@@ -99,7 +99,6 @@ uncomment %wheel ALL=(ALL) ALL
 Edit /etc/mkinitcpio.conf
 Add 'ext4' to MODULES
 Add 'encrypt' and 'lvm2' to HOOKS before 'filesystems'
-
 
 	mkinitcpio -p linux
 #### Setup Grub
@@ -151,7 +150,7 @@ Uncomment Color line in /etc/pacman.conf
 	sudo systemctl enable lightdm.service
 #### Install Window manager
 
-	sudo pacman -S i3-wm
+	sudo pacman -S i3-wm i3status
 #### Set keymap layout in Xorg
 
 	localectl set-x11-keymap se
@@ -171,25 +170,10 @@ Uncomment Color line in /etc/pacman.conf
 	git clone https://aur.archlinux.org/yaourt.git
 	cd yaourt/
 	makepkg -si
-#### Install pulseaudio applet
+#### Install yaourt packages
 
-	yaourt pa-applet-git
-#### Install rofi
-
-	yaourt rofi
-#### Install chrome
-
-	yaourt google-chrome
-#### Install archiver
-
-	yaourt squeeze-git
+	yaourt -S --noconfirm xfontsel sflock-git pa-applet-git rofi squeeze-git
 #### Update mlocate db
 
 	sudo updatedb
-#### Install sflock
-
-	yaourt sflock
-#### Install xfontsel
-
-	yaourt xfontsel
 
