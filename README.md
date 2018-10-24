@@ -54,7 +54,7 @@ Installing Arch linux and i3 window manager
 	mount /dev/sda1 /mnt/boot
 ## Install
 
-	pacstrap /mnt base base-devel adobe-source-code-pro-fonts adobe-source-sans-pro-fonts zsh midori nitrogen dunst openssh git gwaterfall networkmanager nm-connection-editor network-manager-applet pulseaudio mlocate vim xdg-user-dirs xterm reflector arandr htop llpp feh beaver pcmanfm catfish vlc pepper-flash flameshot
+	pacstrap /mnt base base-devel adobe-source-code-pro-fonts adobe-source-sans-pro-fonts zsh nitrogen dunst openssh git gwaterfall networkmanager nm-connection-editor network-manager-applet pulseaudio mlocate vim xdg-user-dirs xterm reflector arandr htop llpp feh beaver pcmanfm catfish vlc pepper-flash flameshot
 ## Configure
 #### Generate fstab file
 	
@@ -172,7 +172,7 @@ Uncomment Color line in /etc/pacman.conf
 	makepkg -si
 #### Install yaourt packages
 
-	yaourt -S --noconfirm xfontsel sflock-git pa-applet-git rofi squeeze-git
+	yaourt -S --noconfirm xfontsel sflock-git pa-applet-git rofi squeeze-git cyberfox-bin
 #### Update mlocate db
 
 	sudo updatedb
